@@ -4,7 +4,7 @@ metadata:
   name: mx-ingress
 spec:
   rules:
-  - host: mx.example.com
+  - host: tagitmobile.com
     http:
       paths:
       - pathType: Prefix
