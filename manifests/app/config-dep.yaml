@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mxconfig
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mxconfig
+  template:
+    metadata:
+      labels:
+        app: mxconfig
+    spec:
+      containers:
+      - name: mxconfig
+        image:  manosolo/demo:v2
+        ports:
+        - containerPort: 8080

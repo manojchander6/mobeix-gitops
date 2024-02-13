@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mx-ingress
+spec:
+  rules:
+  - host: mx.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /mxadmin
+        backend:
+          service:
+            name: mxadmin-svc
+            port:
+              number: 80
+      - pathType: Prefix
+        path: /mxprocess
+        backend:
+          service:
+            name: mxprocess-svc
+            port:
+              number: 80
+      - pathType: Prefix
+        path: /mxcomponent
+        backend:
+          service:
+            name: mxcomponent-svc
+            port:
+              number: 80

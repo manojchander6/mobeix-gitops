@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mxadmin-svc
+spec:
+  selector:
+    app: mxadmin
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 10006
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mxprocess-svc
+spec:
+  selector:
+    app: mxprocess
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 10008
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mxcomponent-svc
+spec:
+  selector:
+    app: mxcomponent
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 10007
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mxconfig-svc
+spec:
+  selector:
+    app: mxconfig
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8091

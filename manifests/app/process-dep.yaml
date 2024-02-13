@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mxprocess
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mxprocess
+  template:
+    metadata:
+      labels:
+        app: mxprocess
+    spec:
+      containers:
+      - name: mxprocess
+        image: manosolo/demo:v2
+        ports:
+        - containerPort: 8080
